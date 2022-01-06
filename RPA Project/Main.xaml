@@ -3,11 +3,13 @@
     <x:Property Name="inout_dtExtractedCars" Type="InOutArgument(sd:DataTable)" />
     <x:Property Name="inout_strCarBrand" Type="InOutArgument(x:String)" />
     <x:Property Name="inout_strCarModel" Type="InOutArgument(x:String)" />
+    <x:Property Name="inout_strReceiverEmail" Type="InOutArgument(x:String)" />
+    <x:Property Name="inout_strLocation" Type="InOutArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1017.6,776</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>870.4,776</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -72,27 +74,53 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetCarDetailsFromUser workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="GetCarDetailsFromUser.xaml">
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke GetInputFromUser workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="GetInputFromUser.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="x:String" x:Key="inout_strCarBrand">[inout_strCarBrand]</InOutArgument>
-        <InOutArgument x:TypeArguments="x:String" x:Key="inout_strCarModel">[inout_strCarModel]</InOutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strCarBrand">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="inout_strCarBrand" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strCarModel">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="inout_strCarModel" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strReceiverEmail">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="inout_strReceiverEmail" />
+        </OutArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="out_strLocation">
+          <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="inout_strLocation" />
+        </OutArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke OpenOLX workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="OpenOLX.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtExtractedCars">[inout_dtExtractedCars]</OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strCarBrand">[inout_strCarBrand]</InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="in_strCarModel">[inout_strCarModel]</InArgument>
+        <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dtExtractedCars">
+          <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="inout_dtExtractedCars" />
+        </OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strCarBrand">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="inout_strCarBrand" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strCarModel">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="inout_strCarModel" />
+        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="in_strLocation">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="inout_strLocation" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SaveDataToExcel workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="SaveDataToExcel.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InOutArgument x:TypeArguments="sd:DataTable" x:Key="inout_dtExtractedCarList">[inout_dtExtractedCars]</InOutArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtExtractedCarList">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="inout_dtExtractedCars" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SendEmailWithResults workflow" sap:VirtualizedContainerService.HintSize="333.6,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="SendEmailWithResults.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+        <InArgument x:TypeArguments="x:String" x:Key="in_strReceiverEmail">
+          <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="inout_strReceiverEmail" />
+        </InArgument>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="in_dtExtractedCars">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="inout_dtExtractedCars" />
+        </InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
   </Sequence>
