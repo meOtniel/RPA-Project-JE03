@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1272.8,6280</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1498.4,6153.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenOLX_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="39">
@@ -87,7 +87,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Workflow which opens OLX site and then data scrapes the results based on some filters in the automotive section" DisplayName="OpenOLX" sap:VirtualizedContainerService.HintSize="1283.2,6215.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Workflow which opens OLX site and then data scrapes the results based on some filters in the automotive section" DisplayName="OpenOLX" sap:VirtualizedContainerService.HintSize="1508.8,6088.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="https://www.olx.ro/auto-masini-moto-ambarcatiuni/autoturisme/" Name="strURL" />
     </Sequence.Variables>
@@ -97,31 +97,27 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1241.6,6091.2" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1467.2,5964.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: OLX" sap:VirtualizedContainerService.HintSize="1204.8,5860" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="536fbd50-2da4-42ee-b9a5-f33cc1e26a8c" Version="V1" WindowResize="Maximize">
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: OLX" sap:VirtualizedContainerService.HintSize="1430.4,5733.6" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" OpenMode="Always" ScopeGuid="536fbd50-2da4-42ee-b9a5-f33cc1e26a8c" Version="V1" WindowResize="Maximize">
           <uix:NApplicationCard.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1171.2,5643.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="1396.8,5516.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="listCarBrands" />
                   <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="listCarModels" />
                   <Variable x:TypeArguments="x:Boolean" Default="False" Name="boolBrandIsFound" />
-                  <Variable x:TypeArguments="x:Boolean" Name="boolModelIsFound">
-                    <Variable.Default>
-                      <Literal x:TypeArguments="x:Boolean" />
-                    </Variable.Default>
-                  </Variable>
+                  <Variable x:TypeArguments="x:Boolean" Default="False" Name="boolModelIsFound" />
                 </Sequence.Variables>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1129.6,548" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1355.2,548" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                   <TryCatch.Try>
                     <uix:NClick ClickType="Single" DisplayName="Click Brand" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="536fbd50-2da4-42ee-b9a5-f33cc1e26a8c" Version="V1">
                       <uix:NClick.Target>
@@ -160,7 +156,7 @@
                     </Catch>
                   </TryCatch.Catches>
                 </TryCatch>
-                <ui:FindChildren Children="[listCarBrands]" DisplayName="Find Children For Car Brand" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="1129.6,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
+                <ui:FindChildren Children="[listCarBrands]" DisplayName="Find Children For Car Brand" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="1355.2,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
                   <ui:FindChildren.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="30b6f319-665c-4a85-9445-44eaa03122d8" InformativeScreenshot="ce71b671ecb9f8eab8b3ee9497280d88" Selector="&lt;webctrl parentid='param_subcat' tag='UL' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -172,13 +168,13 @@
                     </ui:Target>
                   </ui:FindChildren.Target>
                 </ui:FindChildren>
-                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CarBrands" sap:VirtualizedContainerService.HintSize="1129.6,1247.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listCarBrands]">
+                <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each CarBrands" sap:VirtualizedContainerService.HintSize="1355.2,1406.4" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listCarBrands]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="ui:UiElement">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Car Brands Search Sequence" sap:VirtualizedContainerService.HintSize="664,1120.8" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <Sequence DisplayName="Car Brands Search Sequence" sap:VirtualizedContainerService.HintSize="660.8,1280" sap2010:WorkflowViewState.IdRef="Sequence_10">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:String" Name="uiElementResultCarBrand" />
                         </Sequence.Variables>
@@ -187,20 +183,20 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NGetAttribute Attribute="innerText" DisplayName="Get Attribute For CarBrand" sap:VirtualizedContainerService.HintSize="622.4,188" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" InUiElement="[item]" Version="V1">
+                        <uix:NGetAttribute Attribute="innerText" DisplayName="Get Attribute For CarBrand" sap:VirtualizedContainerService.HintSize="619.2,188" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" InUiElement="[item]" Version="V1">
                           <uix:NGetAttribute.Result>
                             <OutArgument x:TypeArguments="x:String">[uiElementResultCarBrand]</OutArgument>
                           </uix:NGetAttribute.Result>
                         </uix:NGetAttribute>
-                        <If Condition="[uiElementResultCarBrand.ToLower.Contains(in_strCarBrand)]" DisplayName="If listCarBrand Contains CarBrand" sap:VirtualizedContainerService.HintSize="622.4,798.4" sap2010:WorkflowViewState.IdRef="If_1">
+                        <If Condition="[uiElementResultCarBrand.ToLower.Contains(in_strCarBrand)]" DisplayName="If listCarBrand Contains CarBrand" sap:VirtualizedContainerService.HintSize="619.2,957.6" sap2010:WorkflowViewState.IdRef="If_1">
                           <If.Then>
-                            <Sequence DisplayName="Click Children Sequence" sap:VirtualizedContainerService.HintSize="478.4,647.2" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                            <Sequence DisplayName="Click Children Sequence" sap:VirtualizedContainerService.HintSize="475.2,806.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="436.8,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,548" sap2010:WorkflowViewState.IdRef="TryCatch_3">
                                 <TryCatch.Try>
                                   <uix:NClick ClickType="Single" DisplayName="Click Car Brand" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="536fbd50-2da4-42ee-b9a5-f33cc1e26a8c" Version="V1">
                                     <uix:NClick.Target>
@@ -215,10 +211,10 @@
                                   </uix:NClick>
                                 </TryCatch.Try>
                                 <TryCatch.Catches>
-                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,383.2" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
@@ -239,7 +235,7 @@
                                   </Catch>
                                 </TryCatch.Catches>
                               </TryCatch>
-                              <Assign DisplayName="Assign If Found" sap:VirtualizedContainerService.HintSize="436.8,61.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign DisplayName="Assign If Found" sap:VirtualizedContainerService.HintSize="433.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_1">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[boolBrandIsFound]</OutArgument>
                                 </Assign.To>
@@ -247,7 +243,7 @@
                                   <InArgument x:TypeArguments="x:Boolean">True</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <ui:Break sap:VirtualizedContainerService.HintSize="436.8,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
+                              <ui:Break sap:VirtualizedContainerService.HintSize="433.6,22.4" sap2010:WorkflowViewState.IdRef="Break_1" />
                             </Sequence>
                           </If.Then>
                         </If>
@@ -255,15 +251,15 @@
                     </ActivityAction>
                   </ui:ForEach.Body>
                 </ui:ForEach>
-                <If Condition="[boolBrandIsFound.Equals(True)]" DisplayName="If Car Brand Exists" sap:VirtualizedContainerService.HintSize="1129.6,3526.4" sap2010:WorkflowViewState.IdRef="If_4">
+                <If Condition="[boolBrandIsFound.Equals(True)]" DisplayName="If Car Brand Exists" sap:VirtualizedContainerService.HintSize="1355.2,3240.8" sap2010:WorkflowViewState.IdRef="If_4">
                   <If.Then>
-                    <Sequence DisplayName="Happy Flow Sequence" sap:VirtualizedContainerService.HintSize="823.2,3375.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                    <Sequence DisplayName="Happy Flow Sequence" sap:VirtualizedContainerService.HintSize="936,3089.6" sap2010:WorkflowViewState.IdRef="Sequence_16">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="781.6,548" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="894.4,388.8" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                         <TryCatch.Try>
                           <uix:NClick ClickType="Single" DisplayName="Click Car Model" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_9" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="536fbd50-2da4-42ee-b9a5-f33cc1e26a8c" Version="V1">
                             <uix:NClick.Target>
@@ -278,10 +274,10 @@
                           </uix:NClick>
                         </TryCatch.Try>
                         <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,383.2" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_4">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -302,7 +298,7 @@
                           </Catch>
                         </TryCatch.Catches>
                       </TryCatch>
-                      <ui:FindChildren Children="[listCarModels]" DisplayName="Find Children For Car Model " Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="781.6,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_CHILDREN">
+                      <ui:FindChildren Children="[listCarModels]" DisplayName="Find Children For Car Model " Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="894.4,107.2" sap2010:WorkflowViewState.IdRef="FindChildren_3" Scope="FIND_CHILDREN">
                         <ui:FindChildren.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="a2abcd83-6b9b-46a0-9945-e58c5bcf11af" InformativeScreenshot="56f171f3f5b71f52b0314edd3a18680c" Selector="&lt;webctrl parentid='param_model' tag='UL' /&gt;">
                             <ui:Target.TimeoutMS>
@@ -314,13 +310,13 @@
                           </ui:Target>
                         </ui:FindChildren.Target>
                       </ui:FindChildren>
-                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Car Model in listCarModels" sap:VirtualizedContainerService.HintSize="781.6,1406.4" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listCarModels]">
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Car Model in listCarModels" sap:VirtualizedContainerService.HintSize="894.4,1279.2" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[listCarModels]">
                         <ui:ForEach.Body>
                           <ActivityAction x:TypeArguments="ui:UiElement">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="ui:UiElement" Name="item" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Car Model Search Sequence" sap:VirtualizedContainerService.HintSize="660.8,1280" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                            <Sequence DisplayName="Car Model Search Sequence" sap:VirtualizedContainerService.HintSize="660.8,1152.8" sap2010:WorkflowViewState.IdRef="Sequence_15">
                               <Sequence.Variables>
                                 <Variable x:TypeArguments="x:String" Name="uiElementResultCarModel" />
                               </Sequence.Variables>
@@ -334,15 +330,15 @@
                                   <OutArgument x:TypeArguments="x:String">[uiElementResultCarModel]</OutArgument>
                                 </uix:NGetAttribute.Result>
                               </uix:NGetAttribute>
-                              <If Condition="[uiElementResultCarModel.ToLower.Contains(in_strCarModel)]" sap:VirtualizedContainerService.HintSize="619.2,957.6" sap2010:WorkflowViewState.IdRef="If_3">
+                              <If Condition="[uiElementResultCarModel.ToLower.Contains(in_strCarModel)]" sap:VirtualizedContainerService.HintSize="619.2,831.2" sap2010:WorkflowViewState.IdRef="If_3">
                                 <If.Then>
-                                  <Sequence DisplayName="Click Car Model Children Sequence" sap:VirtualizedContainerService.HintSize="475.2,806.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                  <Sequence DisplayName="Click Car Model Children Sequence" sap:VirtualizedContainerService.HintSize="475.2,680" sap2010:WorkflowViewState.IdRef="Sequence_14">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,548" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="433.6,421.6" sap2010:WorkflowViewState.IdRef="TryCatch_5">
                                       <TryCatch.Try>
                                         <uix:NClick ClickType="Single" DisplayName="Click Car Model" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="NClick_10" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="536fbd50-2da4-42ee-b9a5-f33cc1e26a8c" Version="V1">
                                           <uix:NClick.Target>
@@ -357,7 +353,7 @@
                                         </uix:NClick>
                                       </TryCatch.Try>
                                       <TryCatch.Catches>
-                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,383.2" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,256.8" sap2010:WorkflowViewState.IdRef="Catch`1_5">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -368,13 +364,12 @@
                                             <ActivityAction.Argument>
                                               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                             </ActivityAction.Argument>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="375.2,312.8" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                            <Sequence sap:VirtualizedContainerService.HintSize="375.2,186.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;The click on car model item could not be executed!&quot;]" />
                                               <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[exception.ToString]" />
                                             </Sequence>
                                           </ActivityAction>
@@ -397,7 +392,7 @@
                           </ActivityAction>
                         </ui:ForEach.Body>
                       </ui:ForEach>
-                      <If Condition="[boolModelIsFound.Equals(True)]" sap:VirtualizedContainerService.HintSize="781.6,1100" sap2010:WorkflowViewState.IdRef="If_6">
+                      <If Condition="[boolModelIsFound.Equals(True)]" sap:VirtualizedContainerService.HintSize="894.4,1100" sap2010:WorkflowViewState.IdRef="If_6">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="475.2,948.8" sap2010:WorkflowViewState.IdRef="Sequence_19">
                             <sap:WorkflowViewStateService.ViewState>
@@ -468,27 +463,43 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_4">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="sd:DataTable">[out_dtExtractedCars]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
-                            </Assign.Value>
-                          </Assign>
+                          <Sequence sap:VirtualizedContainerService.HintSize="375.2,280.8" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="sd:DataTable">[out_dtExtractedCars]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_7" Text="[&quot;The click on car model item could not be executed!&quot;]" />
+                          </Sequence>
                         </If.Else>
                       </If>
                     </Sequence>
                   </If.Then>
                   <If.Else>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.4,61.6" sap2010:WorkflowViewState.IdRef="Assign_2">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="sd:DataTable">[out_dtExtractedCars]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
-                      </Assign.Value>
-                    </Assign>
+                    <Sequence sap:VirtualizedContainerService.HintSize="375.2,281.6" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <Assign sap:VirtualizedContainerService.HintSize="333.6,61.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="sd:DataTable">[out_dtExtractedCars]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="sd:DataTable">[new DataTable]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.6,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;The click on car brand item could not be executed!&quot;]" />
+                    </Sequence>
                   </If.Else>
                 </If>
               </Sequence>
@@ -500,7 +511,7 @@
         </uix:NApplicationCard>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1208,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1433.6,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
